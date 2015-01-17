@@ -2,7 +2,7 @@
 
 (function(){
 	/******
-	 * Controller for Angular JS
+	 * Home Controller, only to show some content after login
 	 */
 	var homeController = function($scope){
 		// var scope = this;

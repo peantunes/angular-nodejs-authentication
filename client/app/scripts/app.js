@@ -1,6 +1,13 @@
 'use strict';
 (function(){
-	function MainController($scope, $rootScope){
+	//Logout of the system and redirect to the main screen
+	function logoutController($location, SessionServices) {
+	    SessionServices.destroy();
+	    $location.path('/home');
+	}
+
+	//Main Controller
+	function mainController($scope, $rootScope){
 		$rootScope.$on('user:login', function(data){
 			console.log('User logged in');
 			$scope.logged = true;
@@ -17,9 +24,16 @@
 	  'myApp.directives',
 	  'myApp.views',
 	  'myApp.services'
-	]).
-	config(['$routeProvider', function($routeProvider) {
+	])
+	.config(function($routeProvider) {
 	  $routeProvider.otherwise({redirectTo: '/home'});
-	}]).
-	controller('MainController', MainController);
+	})
+	.config(function($routeProvider) {
+	 	$routeProvider.when('/logout', {
+		    template: '',
+		    controller: 'LogoutController'
+	 	});
+	})
+	.controller('LogoutController', logoutController)
+	.controller('MainController', mainController);
 })();
