@@ -8,9 +8,10 @@
 	function loginServices($http, $rootScope){
 		var loginServices = {};
 		/** Login method **/
+		var host = "http://127.0.0.1:8001";
 		loginServices.login = function(credentials){
 			return $http
-				.post('/login', credentials)
+				.post(host+'/login', credentials)
 				.then(function (res) {
 					$rootScope.$broadcast('user:login');
 					// return res.data.session;

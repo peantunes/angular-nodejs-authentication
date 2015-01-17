@@ -1,1 +1,14 @@
-package.json
+{
+  "name": "sky_server",
+  "version": "0.1.0",
+  "description": "NodeJs App for server",
+  "main": "app.js",
+  "scripts": {
+    "test": "myTest"
+  },
+  "author": "Pedro Eugenio Antunes",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.11.0"
+  }
+}
