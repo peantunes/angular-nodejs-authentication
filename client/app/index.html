@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+	<head>
+		<title>Authentication</title>
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body ng-controller="MainController">
+		<header>
+			<h1>Login App</h1>
+			<nav ng-show="logged">
+				<ul>
+					<li><a ng-href="/home">Home</a></li>
+					<li><a ng-href="/logout">Logout</a></li>
+				</ul>
+			</nav>		
+			<login-form ng-show="!logged"></login-form>
+		</header>
+
+		<section ng-view ng-show="logged">
+		</section>
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/angular/angular-route.min.js"></script>
+		<script src="scripts/app.js"></script>
+		<script src="scripts/views/home/homeView.js"></script>
+		<script src="scripts/directives/directives.js"></script>
+		<script src="scripts/services/services.js"></script>
+	</body>
+</html>

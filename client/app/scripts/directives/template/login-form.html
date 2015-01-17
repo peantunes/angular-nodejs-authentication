@@ -1,0 +1,6 @@
+<form name="loginForm" ng-controller="LoginController" ng-submit="login()" novalidate>
+	<div class="error" ng-show="error">{{error}}</div>
+	<input type="text" ng-model="credentials.user" placeholder="user" required />
+	<input type="password" ng-model="credentials.password" placeholder="password" required />
+	<button>logon</button> 
+</form>
